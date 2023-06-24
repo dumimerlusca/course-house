@@ -1,0 +1,25 @@
+Users can become authors in order to be able to create courses
+
+COURSES
+
+    CREATE NEW COURSE
+    UPDATE COURSE
+
+LESSONS
+
+    CREATE NEW LESSON
+    UPDATE LESSON
+    DELETE LESSON
+
+
+Users should be able to buy courses
+
+Notification system should be set in place
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-postgres-db
+spec:
+  selector:
+    matchLabels:
+      app: users-postgres-db
+  template:
+    metadata:
+      labels:
+        app: users-postgres-db
+    spec:
+      containers:
+        - name: users-postgres-db
+          image: postgres
+          envFrom:
+            - configMapRef:
+                name: users-db-secret
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          env:
+            - name: POSTGRES_DB
+              value: users
+            - name: POSTGRES_USER
+              value: dumi
+            - name: POSTGRES_PASSWORD
+              value: dumi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: users-postgres-db-srv
+spec:
+  selector:
+    app: users-postgres-db
+  ports:
+    - port: 5432
+      targetPort: 5432

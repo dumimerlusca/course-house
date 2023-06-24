@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres
+    ports:
+      - "5436:5432"
+    container_name: shopping_service_db
+    environment:
+      POSTGRES_USER: dumi
+      POSTGRES_PASSWORD: dumi
+      POSTGRES_DB: shopping-service-db

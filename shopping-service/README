@@ -1,0 +1,6 @@
+This microservice will be responsible for:
+
+- managing wishlisted products
+- managing user cart items
+
+It requires information about products, courses, course authors, reviews, number of lessons

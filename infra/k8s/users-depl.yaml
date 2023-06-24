@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: users
+  template:
+    metadata:
+      labels:
+        app: users
+    spec:
+      containers:
+        - name: users
+          image: dumimerlusca/users-service
+          env:
+            - name: DATABASE_URL
+              value: postgresql://dumi:dumi@users-postgres-db-srv:5432/users
+            - name: PORT
+              value: "3001"
+          # resources:
+          #   limits:
+          #     memory: "128Mi"
+          #     cpu: "500m"
