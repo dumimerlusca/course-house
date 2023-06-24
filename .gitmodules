@@ -1,0 +1,13 @@
+[submodule "auth-service"]
+	path = auth-service
+	url = https://github.com/dumimerlusca/ch-auth-service
+[submodule "courses-service"]
+	path = courses-service
+	url = https://github.com/dumimerlusca/ch-courses-service
+[submodule "users-service"]
+	path = users-service
+	url = https://github.com/dumimerlusca/ch-users-service
+
+[submodule "common"]
+	path = common
+	url = https://github.com/dumimerlusca/ch-common
